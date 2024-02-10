@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+:root {
+  /* PRIMARY */
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+
+  /* NEUTRALS */
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+  --black: hsl(0, 0%, 8%);
+
+  /* GRADIENTS */
+  --light-slate-blue-bg: hsl(252, 100%, 67%);
+  --light-royal-blue-bg: hsl(241, 81%, 54%);
+  --violent-blue-circle: hsla(256, 72%, 46%, 1);
+  --persian-blue-circle: hsla(241, 72%, 46%, 0);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-size: 1.8rem;
+  font-family: "Hanken Grotesk", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.card {
+  max-width: 52rem;
+  width: 100%;
+  border-radius: 3rem;
+  box-shadow: 0 2rem 5rem var(--light-lavender);
+  display: flex;
+  scale: 0;
+  animation: scaleIn 0.4s ease-in-out 1.5s forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.overview,
+.summary {
+  flex: 0 0 50%;
+}
+
+.overview {
+  background-color: hsl(252, 100%, 64%);
+  color: var(--white);
+  display: flex;
+  gap: 1rem;
+  flex-flow: column;
+  align-items: center;
+  padding: 5rem;
+  border-radius: 3rem;
+  font-size: 1.5rem;
+}
+
+.overview h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.chart {
+  width: 15rem;
+  height: 15rem;
+  background: linear-gradient(
+    180deg,
+    var(--violent-blue-circle),
+    var(--persian-blue-circle)
+  );
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+}
+
+.chart .score {
+  text-align: center;
+  font-size: 1.5rem;
+  color: hsl(0, 100%, 100%, 0.75);
+}
+
+.chart .score span {
+  display: block;
+  font-size: 5.2rem;
+  color: var(--white);
+}
+
+.comment {
+  font-size: 2rem;
+}
+
+.info {
+  max-width: 25rem;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* SUMMARY */
+.summary {
+  padding: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.summary h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+}
+
+.category p:nth-of-type(2) span {
+  color: var(--dark-gray-blue);
+  font-weight: bolder;
+}
+
+.category p:nth-of-type(2) {
+  color: hsla(0, 0%, 5%, 0.4);
+}
+.category p:first-of-type {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.category p:first-of-type > img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.category-1 {
+  background-color: hsla(0, 100%, 67%, 0.025);
+}
+
+.category-1 p:first-of-type {
+  color: hsla(0, 100%, 67%, 0.754);
+}
+
+.category-2 {
+  background-color: hsla(39, 100%, 56%, 0.05);
+}
+
+.category-2 p:first-of-type {
+  color: hsla(39, 100%, 56%, 0.8);
+}
+.category-3 {
+  background-color: hsla(166, 100%, 37%, 0.072);
+}
+
+.category-3 p:first-of-type {
+  color: hsla(166, 100%, 37%, 0.9);
+}
+
+.category-4 {
+  background-color: hsla(234, 85%, 45%, 0.054);
+}
+
+.category-4 p:first-of-type {
+  color: hsla(234, 85%, 45%, 0.9);
+}
+
+.btn-continue {
+  width: 100%;
+  border: 1px solid transparent;
+  padding: 1rem;
+  border-radius: 3rem;
+  background-color: var(--dark-gray-blue);
+  color: var(--white);
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: 0.4s ease;
+}
+
+.btn-continue:hover {
+  background-color: var(--white);
+  border: 1px solid var(--dark-gray-blue);
+  color: var(--dark-gray-blue);
+}
+
+@media (max-width: 31.25em) {
+  body {
+    padding: 0;
+    place-items: initial;
+  }
+  .card {
+    flex-flow: column;
+  }
+
+  .overview {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 2.5rem 7.5rem;
+  }
+
+  .comment {
+    font-size: 2.2rem;
+  }
+
+  .info {
+    font-size: 1.5rem;
+  }
+
+  .summary {
+    padding: 3rem;
+  }
+
+  .summary h2 {
+    font-size: 2rem;
+  }
+
+  .category {
+    font-size: 1.5rem;
+  }
+
+  .btn-continue {
+    font-size: 1.5rem;
+  }
+}
