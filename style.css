@@ -51,11 +51,11 @@ body {
   border-radius: 3rem;
   box-shadow: 0 2rem 5rem var(--light-lavender);
   display: flex;
-  scale: 0;
-  animation: scaleIn 0.4s ease-in-out 1.5s forwards;
+/*   scale: 0; */
+/*   animation: scaleIn 0.4s ease-in-out 1.5s forwards; */
 }
 
-@keyframes scaleIn {
+/* @keyframes scaleIn {
   from {
     scale: 0;
     opacity: 0;
@@ -64,7 +64,7 @@ body {
     scale: 1;
     opacity: 1;
   }
-}
+} */
 
 .overview,
 .summary {
